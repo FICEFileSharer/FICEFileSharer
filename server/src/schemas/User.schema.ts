@@ -6,7 +6,10 @@ export class User {
   Email: string
 
   @Prop({ required: true })
-  Name: string
+  FirstName: string
+
+  @Prop({ required: false })
+  LastName?: string
 
   @Prop({ required: false })
   ProfilePictureURL?: string

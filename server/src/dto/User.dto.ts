@@ -1,5 +1,6 @@
 export class UserDTO {
   Email: string
-  Name: string
+  FirstName: string
+  LastName?: string
   ProfilePictureURL?: string
 }
