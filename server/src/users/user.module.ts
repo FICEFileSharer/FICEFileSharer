@@ -14,6 +14,6 @@ import { UserDTO } from 'src/dto/user.dto'
     ]),
   ],
   providers: [UsersService, User, UserDTO],
-  controllers: [],
+  exports: [UsersService],
 })
 export class UserModule {}
