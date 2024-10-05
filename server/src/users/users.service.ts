@@ -9,7 +9,6 @@ export class UsersService {
   constructor(@InjectModel(User.name) private user: Model<User>) {}
 
   create = async (userDTO: UserDTO) => {
-    console.log(userDTO)
     return await new this.user(userDTO).save()
   }
 }
