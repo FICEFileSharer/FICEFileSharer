@@ -5,6 +5,8 @@ import { AuthModule } from './auth/auth.module'
 import { ConfigModule } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose'
 import { UserModule } from './users/user.module'
+import { Passport } from 'passport'
+import { PassportModule } from '@nestjs/passport'
 
 @Module({
   imports: [
@@ -14,6 +16,7 @@ import { UserModule } from './users/user.module'
     }),
     MongooseModule.forRoot(process.env.MONGO_LOCAL_CONNECTION),
     UserModule,
+    PassportModule.register({ session: true }),
   ],
   controllers: [AppController],
   providers: [AppService],

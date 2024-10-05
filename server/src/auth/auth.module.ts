@@ -6,6 +6,7 @@ import GoogleAuthGuard from './utils/GoogleAuthGuard'
 import { User, UserSchema } from 'src/schemas/User.schema'
 import { MongooseModule } from '@nestjs/mongoose'
 import { UserModule } from 'src/users/user.module'
+import SessionSerializer from './utils/Serializer'
 
 @Module({
   controllers: [AuthController],
@@ -17,6 +18,7 @@ import { UserModule } from 'src/users/user.module'
       useClass: AuthService,
     },
     GoogleAuthGuard,
+    SessionSerializer,
   ],
   imports: [
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),

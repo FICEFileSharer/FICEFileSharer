@@ -4,7 +4,6 @@ import { User } from 'src/schemas/User.schema'
 import { Model } from 'mongoose'
 import { UserDTO } from 'src/dto/user.dto'
 import { UsersService } from 'src/users/users.service'
-import { isNull } from 'util'
 
 @Injectable()
 export class AuthService {
@@ -14,8 +13,10 @@ export class AuthService {
   ) {}
 
   validateUser = async (userDTO: UserDTO) => {
-    const validatedUser = await this.user.findOne({ Email: userDTO.Email })
+    const validatedUser = await this.findUser(userDTO.Email)
     if (validatedUser) return userDTO
     await this.usersService.create(userDTO)
   }
+
+  findUser = async (email: string) => await this.user.findOne({ Email: email })
 }
