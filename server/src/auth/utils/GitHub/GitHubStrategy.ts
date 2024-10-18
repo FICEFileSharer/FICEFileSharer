@@ -21,18 +21,16 @@ export class GithubStrategy extends PassportStrategy(Strategy, 'github') {
     refreshToken: string,
     profile: any,
     done: Function,
-  ) {
+  ): Promise<any> {
     try {
-      //   const { id, username, emails } = profile
-      //   const user = {
-      //     githubId: id,
-      //     username: username,
-      //     email: emails[0].value,
-      //     accessToken,
-      //   }
-
       console.log(profile)
-      done(null, null) // Call the done function with the user info
+      const { displayName, emails, photos } = profile
+      const user = this.authService.validateUser({
+        Email: emails[0].value,
+        FullName: displayName,
+        ProfilePictureURL: photos[0].value,
+      })
+      done(null, user)
     } catch (err) {
       done(err, false)
     }

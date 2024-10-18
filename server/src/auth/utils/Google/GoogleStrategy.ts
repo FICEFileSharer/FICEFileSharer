@@ -21,11 +21,11 @@ export class GoogleStrategy extends PassportStrategy(Strategy) {
     refreshToken: string,
     profile: any,
   ): Promise<any> {
+    console.log(profile)
     const { name, emails, photos } = profile
     const user = this.authService.validateUser({
       Email: emails[0].value,
-      FirstName: name.givenName,
-      LastName: name.familyName,
+      FullName: `${name.givenName} ${name.familyName}`,
       ProfilePictureURL: photos[0].value,
     })
 

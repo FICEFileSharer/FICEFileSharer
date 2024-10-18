@@ -14,13 +14,14 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  findUser = async (email: string) => await this.user.findOne({ Email: email })
+  create = async (userDTO: UserDTO) => this.usersService.create(userDTO)
+
   validateUser = async (userDTO: UserDTO) => {
     const validatedUser = await this.findUser(userDTO.Email)
     if (validatedUser) return userDTO
-    await this.usersService.create(userDTO)
+    await this.create(userDTO)
   }
-
-  findUser = async (email: string) => await this.user.findOne({ Email: email })
 
   generateJwt = (user: any) => {
     const payload = { email: user.email, sub: user.id }

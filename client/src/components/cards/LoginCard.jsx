@@ -22,7 +22,7 @@ const LoginCard = () => {
 
             <hr class='hr' />
             <a
-              href='http://localhost:3001/api/auth/github/login'
+              href={`${apiUrl}/auth/github/login`}
               class='btn btn-outline-light btn-lg'
             >
               Вхід через <i className='bi bi-github'></i>
