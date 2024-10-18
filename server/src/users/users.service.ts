@@ -7,8 +7,6 @@ import { User } from 'src/schemas/User.schema'
 @Injectable()
 export class UsersService {
   constructor(@InjectModel(User.name) private user: Model<User>) {}
-
-  create = async (userDTO: UserDTO) => {
-    return await new this.user(userDTO).save()
-  }
+  
+  create = async (userDTO: UserDTO) => await new this.user(userDTO).save()
 }

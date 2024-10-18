@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common'
 import { AuthController } from './auth.controller'
 import { AuthService } from './auth.service'
-import { GoogleStrategy } from './utils/GoogleStrategy'
-import GoogleAuthGuard from './utils/GoogleAuthGuard'
+import { GoogleStrategy } from './utils/Google/GoogleStrategy'
+import GoogleAuthGuard from './utils/Google/GoogleAuthGuard'
 import { User, UserSchema } from 'src/schemas/User.schema'
 import { MongooseModule } from '@nestjs/mongoose'
 import { UserModule } from 'src/users/user.module'
-import SessionSerializer from './utils/Serializer'
+import SessionSerializer from './utils/Google/Serializer'
 import { JwtModule } from '@nestjs/jwt'
 
 @Module({
