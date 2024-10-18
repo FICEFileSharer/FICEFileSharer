@@ -4,12 +4,14 @@ import { User } from 'src/schemas/User.schema'
 import { Model } from 'mongoose'
 import { UserDTO } from 'src/dto/user.dto'
 import { UsersService } from 'src/users/users.service'
+import { JwtService } from '@nestjs/jwt'
 
 @Injectable()
 export class AuthService {
   constructor(
     @InjectModel(User.name) private user: Model<User>,
     private readonly usersService: UsersService,
+    private jwtService: JwtService,
   ) {}
 
   validateUser = async (userDTO: UserDTO) => {
@@ -19,4 +21,9 @@ export class AuthService {
   }
 
   findUser = async (email: string) => await this.user.findOne({ Email: email })
+
+  generateJwt = (user: any) => {
+    const payload = { email: user.email, sub: user.id }
+    return this.jwtService.sign(payload)
+  }
 }

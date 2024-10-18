@@ -7,6 +7,7 @@ import { User, UserSchema } from 'src/schemas/User.schema'
 import { MongooseModule } from '@nestjs/mongoose'
 import { UserModule } from 'src/users/user.module'
 import SessionSerializer from './utils/Serializer'
+import { JwtModule } from '@nestjs/jwt'
 
 @Module({
   controllers: [AuthController],
@@ -23,6 +24,7 @@ import SessionSerializer from './utils/Serializer'
   imports: [
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     UserModule,
+    JwtModule
   ],
 })
 export class AuthModule {}
