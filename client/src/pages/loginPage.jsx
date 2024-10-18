@@ -1,7 +1,7 @@
 import React from 'react'
 import LoginCard from '../components/cards/LoginCard'
 
-const loginPage = () => {
+const LoginPage = () => {
   return (
     <div className='d-flex align-items-center justify-content-center'>
       <LoginCard></LoginCard>
@@ -9,4 +9,4 @@ const loginPage = () => {
   )
 }
 
-export default loginPage
+export default LoginPage

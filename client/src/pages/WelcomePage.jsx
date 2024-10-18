@@ -1,12 +1,6 @@
 import React from 'react'
-import { redirect } from 'react-router-dom'
 
 const WelcomePage = () => {
-  redirect = () => {
-    
-  }
-
-
   return (
     <div>
       <div className='d-flex h-100 text-center text-white bg-dark'>
