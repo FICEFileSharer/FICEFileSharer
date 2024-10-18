@@ -1,5 +1,6 @@
 import { Controller, Get, UseGuards } from '@nestjs/common'
 import GoogleAuthGuard from './utils/Google/GoogleAuthGuard'
+import { AuthGuard } from '@nestjs/passport'
 
 @Controller('auth')
 export class AuthController {
@@ -7,9 +8,17 @@ export class AuthController {
 
   @UseGuards(GoogleAuthGuard)
   @Get('google/login')
-  handleLogin() {}
+  handleGoogleLogin() {}
 
   @UseGuards(GoogleAuthGuard)
   @Get('google/redirect')
-  handleRedirect() {}
+  handleGoogleRedirect() {}
+
+  @UseGuards(AuthGuard('github'))
+  @Get('github/login')
+  handleGitHubLogin() {}
+
+  @UseGuards(AuthGuard('github'))
+  @Get('github/redirect')
+  handleGitHubRedirect() {}
 }
