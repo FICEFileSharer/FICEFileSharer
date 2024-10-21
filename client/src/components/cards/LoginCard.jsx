@@ -7,23 +7,25 @@ const LoginCard = () => {
       <h2>FICE File Sharer</h2>
 
       <div
-        class='card border-dark mb-3 text-light'
+        className='card border-dark mb-3 text-light'
         style={{ maxWidth: '30rem', minWidth: '20rem' }}
       >
-        <div class='card-header text-light'>Увійти</div>
-        <div class='card-body'>
+        <div className='card-header text-light'>Увійти</div>
+
+        <div className='card-body'>
           <div className='d-grid'>
             <a
               href={`${apiUrl}/auth/google/login`}
-              class='btn btn-outline-light btn-lg'
+              className='btn btn-outline-light btn-lg'
             >
               Вхід через <i className='bi bi-google'></i>
             </a>
 
-            <hr class='hr' />
+            <hr className='hr' />
+
             <a
               href={`${apiUrl}/auth/github/login`}
-              class='btn btn-outline-light btn-lg'
+              className='btn btn-outline-light btn-lg'
             >
               Вхід через <i className='bi bi-github'></i>
             </a>

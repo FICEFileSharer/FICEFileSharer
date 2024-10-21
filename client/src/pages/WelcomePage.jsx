@@ -4,27 +4,32 @@ const WelcomePage = () => {
   return (
     <div>
       <div className='d-flex h-100 text-center text-white bg-dark'>
-        <div class='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
-          <header class='mb-auto'></header>
+        <div className='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
+          <header className='mb-auto'></header>
 
           <h1>FICE File Sharer</h1>
+
           <p>
             Файловий шерер для студентів КПІ ФІОТ — це веб-додаток, який дозволяє
             студентам зручно завантажувати, зберігати та обмінюватися файлами в
             межах навчальних груп.
           </p>
+
           <p>
-            <a href='/login' class='btn btn-lg btn-outline-light '>
+            <a 
+              href='/login' 
+              className='btn btn-lg btn-outline-light '
+            >
               Розпочати роботу
             </a>
           </p>
 
-          <footer class='mt-auto text-white-50'>
+          <footer className='mt-auto text-white-50'>
             <p>
               Вихідний код застосунку доступний на{' '}
               <a
                 href='https://github.com/FICEFileSharer/FICEFileSharer'
-                class='text-white'
+                className='text-white'
               >
                 GitHub <i className='bi bi-github'></i>
               </a>
