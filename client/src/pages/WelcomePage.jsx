@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { SearchContext } from '../contexts/SearchContext';
+import FolderCard from '../components/cards/FolderCard/FolderCard';
+import searchData from '../data/searchData.temp';
 
 const WelcomePage = () => {
+  const { searchQuery } = useContext(SearchContext);
+
   return (
     <div>
       <div className='d-flex h-100 text-center text-white bg-dark'>
         <div className='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
-          <header className='mb-auto'></header>
 
           <h1>FICE File Sharer</h1>
 
@@ -18,17 +22,31 @@ const WelcomePage = () => {
           <p>
             <a 
               href='/login' 
-              className='btn btn-lg btn-outline-light '
+              className='btn btn-lg btn-outline-light'
             >
               Розпочати роботу
             </a>
           </p>
 
+          <div className='d-flex flex-wrap folder-cont justify-content-center gap-3 mt-3 mb-5 px-2'>
+              {searchData.map((item, index) => (
+                
+                  <FolderCard 
+                    key={index} 
+                    card={item}  
+                    style_class={item.name.toLowerCase().includes(searchQuery.toLowerCase()) 
+                      ? 'd-inline-block' 
+                      : 'd-none'}
+                  />
+
+              ))}
+          </div>
+
           <footer className='mt-auto text-white-50'>
             <p>
               Вихідний код застосунку доступний на{' '}
-              <a
-                href='https://github.com/FICEFileSharer/FICEFileSharer'
+              <a 
+                href='https://github.com/FICEFileSharer/FICEFileSharer' 
                 className='text-white'
               >
                 GitHub <i className='bi bi-github'></i>
@@ -38,7 +56,7 @@ const WelcomePage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WelcomePage
+export default WelcomePage;

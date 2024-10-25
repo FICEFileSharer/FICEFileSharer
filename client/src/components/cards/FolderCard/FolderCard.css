@@ -1,0 +1,22 @@
+.folder-card {
+    width: 160px;
+    overflow: hidden;
+    padding: 0.5rem !important;
+}
+
+.folder-card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+@media (min-width: 600px) {
+    .folder-card {
+        width: calc(45% - 20px);
+    }
+}
+
+@media (min-width: 900px) {
+    .folder-card {
+        width: calc(20% - 20px);
+    }
+}

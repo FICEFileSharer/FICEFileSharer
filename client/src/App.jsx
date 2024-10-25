@@ -1,17 +1,33 @@
-import './App.css'
-import WelcomePage from './pages/WelcomePage'
-import LoginPage from './pages/LoginPage'
-import { Routes, Route } from 'react-router-dom'
+import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { SearchProvider } from './contexts/SearchContext';
+import Header from './components/Header/Header';
+import WelcomePage from './pages/WelcomePage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
     <div className='App'>
-      <Routes>
-        <Route path='' element={<WelcomePage />}></Route>
-        <Route path='login' element={<LoginPage />}></Route>
-      </Routes>
+      <SearchProvider>
+        <Routes>
+          <Route path='' element={
+            <> 
+              <Header /> 
+              <WelcomePage /> 
+            </>
+          }></Route>
+          
+          <Route path='login' element={
+            <> 
+              <Header /> 
+              <LoginPage /> 
+            </>
+          }></Route>
+        </Routes>
+      </SearchProvider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

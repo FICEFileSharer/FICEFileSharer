@@ -1,0 +1,56 @@
+.list-group-item:hover {
+    background-color: #222 !important;
+}
+
+.list-group-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: limegreen;
+}
+
+.flex-element {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.folder-icon {
+    -webkit-flex: 2;
+    -moz-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+}
+
+.folder-inf {
+    -webkit-flex: 11;
+    -moz-flex: 11;
+    -ms-flex: 11;
+    flex: 11;
+}
+
+.flex-name {
+    -webkit-flex: 3;
+    -moz-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+}
+
+.flex-time {
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.truncated-name {
+    max-width: 15rem;
+}
+
+.truncated-creator {
+    max-width: 17rem;
+}
