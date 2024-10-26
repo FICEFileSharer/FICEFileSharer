@@ -33,6 +33,10 @@
   background-color: #101010 !important;
 }
 
+.bg-dark-202020 {
+  background-color: #202020 !important;
+}
+
 .text-grey-500 {
   color: var(--bs-gray-500) !important;
 }

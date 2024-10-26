@@ -3,6 +3,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { SearchProvider } from './contexts/SearchContext';
 import Header from './components/Header/Header';
+import Footer from './components/Footer';
 import WelcomePage from './pages/WelcomePage';
 import LoginPage from './pages/LoginPage';
 
@@ -15,6 +16,7 @@ function App() {
             <> 
               <Header /> 
               <WelcomePage /> 
+              <Footer />
             </>
           }></Route>
           

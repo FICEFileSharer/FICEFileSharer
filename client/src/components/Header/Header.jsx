@@ -1,7 +1,7 @@
 import './Header.css';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import ProfileButton from '../ProfileButton/ProfileButton';
+import ProfileButton from '../buttons/ProfileButton/ProfileButton';
 import SearchBar from '../searchInput/SearchBar/SearchBar';
 
 const Header = () => {

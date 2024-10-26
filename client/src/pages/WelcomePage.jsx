@@ -41,18 +41,6 @@ const WelcomePage = () => {
 
               ))}
           </div>
-
-          <footer className='mt-auto text-white-50'>
-            <p>
-              Вихідний код застосунку доступний на{' '}
-              <a 
-                href='https://github.com/FICEFileSharer/FICEFileSharer' 
-                className='text-white'
-              >
-                GitHub <i className='bi bi-github'></i>
-              </a>
-            </p>
-          </footer>
         </div>
       </div>
     </div>
