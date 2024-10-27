@@ -9,6 +9,12 @@
     color: var(--bs-success);
 }
 
+@media (min-width: 768px) {
+    .end-pc {
+        right: 1% !important;
+    }
+}
+
 @media (max-width: 768px) {
     .bottom-mb {
         bottom: 15% !important;
