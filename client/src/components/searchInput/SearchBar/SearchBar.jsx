@@ -57,7 +57,7 @@ const SearchBar = () => {
                 />
 
                 {isActive && suggestions.length > 0 && ( 
-                    <ul className='list-group list-size list-search'> 
+                    <ul className='list-group list-size list-search overflow-y-auto'> 
                         {suggestions.map((suggestion, index) => ( 
 
                             <SearchItem 

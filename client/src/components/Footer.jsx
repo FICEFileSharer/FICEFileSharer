@@ -3,7 +3,7 @@ import FooterButton from './buttons/FooterButton/FooterButton';
 
 const Footer = () => {
   return (
-        <footer className='bd-footer'>
+        <footer className='mt-auto bd-footer'>
             <div className='d-flex flex-wrap justify-content-center bg-dark-202020 p-3 gap-3'>
                 <FooterButton 
                     href='https://github.com/FICEFileSharer/FICEFileSharer'

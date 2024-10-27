@@ -10,7 +10,7 @@ import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
-    <div className='App'>
+    <div className='App d-flex flex-column min-vh-100'>
       <SearchProvider>
         <Routes>
           <Route path='' element={
