@@ -24,3 +24,64 @@ body,
 .App {
   min-height: 100vh;
 }
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bs-dark);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--bs-white);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--bs-gray-300);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: var(--bs-gray-600);
+  }
+
+  ::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background: url('./pictures/scrollbar_buttons/normal/up-arrow-icon.png') no-repeat center;
+    background-color: var(--bs-dark);
+    background-size: 8px 8px;
+  }
+
+  ::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    background: url('./pictures/scrollbar_buttons/normal/up-arrow-icon.png') no-repeat center;
+    background-color: var(--bs-gray-600);
+    background-size: 8px 8px;
+  }
+
+  ::-webkit-scrollbar-button:single-button:vertical:decrement:active {
+    background: url('./pictures/scrollbar_buttons/active/up-arrow-icon.png') no-repeat center;
+    background-color: var(--bs-white);
+    background-size: 8px 8px;
+  }
+
+  ::-webkit-scrollbar-button:single-button:vertical:increment {
+    background: url('./pictures/scrollbar_buttons/normal/down-arrow-icon.png') no-repeat center;
+    background-color: var(--bs-dark);
+    background-size: 8px 8px;
+  }
+
+  ::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background: url('./pictures/scrollbar_buttons/normal/down-arrow-icon.png') no-repeat center;
+    background-color: var(--bs-gray-600);
+    background-size: 8px 8px;
+  }
+
+  ::-webkit-scrollbar-button:single-button:vertical:increment:active {
+    background: url('./pictures/scrollbar_buttons/active/down-arrow-icon.png') no-repeat center;
+    background-color: var(--bs-white);
+    background-size: 8px 8px;
+  }
+}
