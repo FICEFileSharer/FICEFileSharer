@@ -24,7 +24,7 @@ const Footer = () => {
                 </FooterButton>
 
                 <FooterButton 
-                    href='/'
+                    href='/privacy'
                 >
                     Конфіденційність
                 </FooterButton>

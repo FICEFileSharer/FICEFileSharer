@@ -56,7 +56,7 @@ const Sidebar = () => {
                             </SidebarElement>
 
                             <SidebarElement 
-                                href='/'
+                                href='/privacy'
                             >
                                 Конфіденційність
                             </SidebarElement>

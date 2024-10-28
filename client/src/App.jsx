@@ -10,6 +10,7 @@ import WelcomePage from './pages/WelcomePage';
 import LoginPage from './pages/LoginPage';
 import AboutUsPage from './pages/AboutUsPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
+import PrivacyPage from './pages/PrivacyPage';
 
 function App() {
   return (
@@ -50,6 +51,18 @@ function App() {
               <div className='d-flex'>
                 <Sidebar />
                 <TermsOfServicePage /> 
+              </div>
+              <TopScrollButton />
+              <Footer />
+            </>
+          }></Route>
+
+          <Route path='/privacy' element={
+            <> 
+              <Header /> 
+              <div className='d-flex'>
+                <Sidebar />
+                <PrivacyPage /> 
               </div>
               <TopScrollButton />
               <Footer />
