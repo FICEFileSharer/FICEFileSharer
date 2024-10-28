@@ -65,6 +65,10 @@
   padding-bottom: 0.65rem !important;
 }
 
+.px-mb-1 {
+  padding: 1rem !important;
+}
+
 @media (min-width: 600px) {
   .folder-cont {
       flex-direction: row;
@@ -74,6 +78,18 @@
 @media (min-width: 768px) {
   .mobile-pb {
       padding-bottom: 0rem !important;
+  }
+
+  .px-mb-1 {
+      padding-right: 3rem !important;
+      padding-left: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .px-mb-1 {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
   }
 }
 
@@ -87,6 +103,16 @@
 
 .end-2 {
   right: 2% !important;
+}
+
+.text-aling-justify {
+  text-align: justify !important;
+}
+
+.text-uk-hyphens {
+  word-wrap: break-word;
+  hyphens: auto;
+  lang: uk;
 }
 
 @keyframes App-logo-spin {

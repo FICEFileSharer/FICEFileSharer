@@ -12,7 +12,7 @@ const Footer = () => {
                 </FooterButton>
 
                 <FooterButton 
-                    href='/'
+                    href='/aboutus'
                 >
                     Про нас
                 </FooterButton>
