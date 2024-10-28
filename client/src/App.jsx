@@ -9,6 +9,7 @@ import Sidebar from './components/sidebar/Sidebar/Sidebar';
 import WelcomePage from './pages/WelcomePage';
 import LoginPage from './pages/LoginPage';
 import AboutUsPage from './pages/AboutUsPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
 
 function App() {
   return (
@@ -37,6 +38,18 @@ function App() {
               <div className='d-flex'>
                 <Sidebar />
                 <AboutUsPage /> 
+              </div>
+              <TopScrollButton />
+              <Footer />
+            </>
+          }></Route>
+
+          <Route path='/terms' element={
+            <> 
+              <Header /> 
+              <div className='d-flex'>
+                <Sidebar />
+                <TermsOfServicePage /> 
               </div>
               <TopScrollButton />
               <Footer />

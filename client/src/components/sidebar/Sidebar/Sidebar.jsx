@@ -50,9 +50,9 @@ const Sidebar = () => {
                             </SidebarElement>
 
                             <SidebarElement 
-                                href='/'
+                                href='/terms'
                             >
-                                Правила використання
+                                Умови використання
                             </SidebarElement>
 
                             <SidebarElement 

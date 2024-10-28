@@ -18,9 +18,9 @@ const Footer = () => {
                 </FooterButton>
 
                 <FooterButton 
-                    href='/'
+                    href='/terms'
                 >
-                    Правила використання
+                    Умови використання
                 </FooterButton>
 
                 <FooterButton 
