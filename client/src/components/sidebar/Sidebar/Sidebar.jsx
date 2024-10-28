@@ -62,7 +62,7 @@ const Sidebar = () => {
                             </SidebarElement>
 
                             <SidebarElement 
-                                href='/'
+                                href='/security'
                             >
                                 Безпека
                             </SidebarElement>

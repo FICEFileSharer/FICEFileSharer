@@ -30,7 +30,7 @@ const Footer = () => {
                 </FooterButton>
 
                 <FooterButton 
-                    href='/'
+                    href='/security'
                 >
                     Безпека
                 </FooterButton>

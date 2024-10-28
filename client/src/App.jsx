@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage';
 import AboutUsPage from './pages/AboutUsPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import PrivacyPage from './pages/PrivacyPage';
+import SecurityPage from './pages/SecurityPage';
 
 function App() {
   return (
@@ -63,6 +64,18 @@ function App() {
               <div className='d-flex'>
                 <Sidebar />
                 <PrivacyPage /> 
+              </div>
+              <TopScrollButton />
+              <Footer />
+            </>
+          }></Route>
+
+          <Route path='/security' element={
+            <> 
+              <Header /> 
+              <div className='d-flex'>
+                <Sidebar />
+                <SecurityPage /> 
               </div>
               <TopScrollButton />
               <Footer />
