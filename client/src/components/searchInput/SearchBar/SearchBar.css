@@ -38,24 +38,8 @@
         background-color: var(--bs-dark-101010);
     }
 
-    .list-search::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-        background-color: var(--bs-gray-600);
-    }
-
-    .list-search::-webkit-scrollbar-button:single-button:vertical:decrement:active {
-        background-color: var(--bs-white);
-    }
-
     .list-search::-webkit-scrollbar-button:single-button:vertical:increment {
         background-color: var(--bs-dark-101010);
-    }
-
-    .list-search::-webkit-scrollbar-button:single-button:vertical:increment:hover {
-        background-color: var(--bs-gray-600);
-    }
-
-    .list-search::-webkit-scrollbar-button:single-button:vertical:increment:active {
-        background-color: var(--bs-white);
     }
 }
 
