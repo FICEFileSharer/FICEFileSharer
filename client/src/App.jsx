@@ -1,11 +1,11 @@
 import './App.css'
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { SearchProvider } from './contexts/SearchContext'
 import Header from './components/layout/Header/Header'
 import TopScrollButton from './components/buttons/TopScrollButton/TopScrollButton'
 import Footer from './components/layout/Footer'
-import Sidebar from './components/sidebar/Sidebar/Sidebar'
+import RouteDocumentation from './components/layout/RouteDocumentation'
 import WelcomePage from './pages/WelcomePage'
 import LoginPage from './pages/LoginPage'
 import AboutUsPage from './pages/AboutUsPage'
@@ -14,92 +14,60 @@ import PrivacyPage from './pages/PrivacyPage'
 import SecurityPage from './pages/SecurityPage'
 
 function App() {
+  const location = useLocation()
+
   return (
     <div className='App d-flex flex-column min-vh-100'>
       <SearchProvider>
-        <Routes>
-          <Route
-            path=''
-            element={
-              <>
-                <Header />
-                <WelcomePage />
-                <TopScrollButton />
-                <Footer />
-              </>
-            }
-          ></Route>
+        <Header />
 
-          <Route
-            path='login'
-            element={
-              <>
-                <Header />
-                <LoginPage />
-              </>
-            }
-          ></Route>
+        <main>
+          <Routes>
+            <Route path='' element={<WelcomePage />}></Route>
 
-          <Route
-            path='/aboutus'
-            element={
-              <>
-                <Header />
-                <div className='d-flex'>
-                  <Sidebar />
+            <Route path='login' element={<LoginPage />}></Route>
+
+            <Route
+              path='/aboutus'
+              element={
+                <RouteDocumentation>
                   <AboutUsPage />
-                </div>
-                <TopScrollButton />
-                <Footer />
-              </>
-            }
-          ></Route>
+                </RouteDocumentation>
+              }
+            ></Route>
 
-          <Route
-            path='/terms'
-            element={
-              <>
-                <Header />
-                <div className='d-flex'>
-                  <Sidebar />
+            <Route
+              path='/terms'
+              element={
+                <RouteDocumentation>
                   <TermsOfServicePage />
-                </div>
-                <TopScrollButton />
-                <Footer />
-              </>
-            }
-          ></Route>
+                </RouteDocumentation>
+              }
+            ></Route>
 
-          <Route
-            path='/privacy'
-            element={
-              <>
-                <Header />
-                <div className='d-flex'>
-                  <Sidebar />
+            <Route
+              path='/privacy'
+              element={
+                <RouteDocumentation>
                   <PrivacyPage />
-                </div>
-                <TopScrollButton />
-                <Footer />
-              </>
-            }
-          ></Route>
+                </RouteDocumentation>
+              }
+            ></Route>
 
-          <Route
-            path='/security'
-            element={
-              <>
-                <Header />
-                <div className='d-flex'>
-                  <Sidebar />
+            <Route
+              path='/security'
+              element={
+                <RouteDocumentation>
                   <SecurityPage />
-                </div>
-                <TopScrollButton />
-                <Footer />
-              </>
-            }
-          ></Route>
-        </Routes>
+                </RouteDocumentation>
+              }
+            ></Route>
+          </Routes>
+        </main>
+
+        <TopScrollButton />
+
+        {location.pathname !== '/login' && <Footer />}
       </SearchProvider>
     </div>
   )

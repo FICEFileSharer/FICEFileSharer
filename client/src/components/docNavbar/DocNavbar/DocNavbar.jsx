@@ -1,8 +1,8 @@
-import './Sidebar.css'
+import './DocNavbar.css'
 import React, { useState } from 'react'
-import SidebarElement from '../SidebarElement/SidebarElement'
+import DocNavbarElement from '../DocNavbarElement/DocNavbarElement'
 
-const Sidebar = () => {
+const DocNavbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
 
@@ -27,9 +27,9 @@ const Sidebar = () => {
 
   const renderSidebarButtons = (links) => {
     return links.map((link, index) => (
-      <SidebarElement key={index} href={link.href}>
+      <DocNavbarElement key={index} href={link.href}>
         {link.label}
-      </SidebarElement>
+      </DocNavbarElement>
     ))
   }
 
@@ -72,4 +72,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default DocNavbar

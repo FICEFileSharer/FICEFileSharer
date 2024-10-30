@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 
-const SidebarElement = ({ children, href }) => {
+const DocNavbarElement = ({ children, href }) => {
   const location = useLocation()
 
   return (
@@ -19,4 +19,4 @@ const SidebarElement = ({ children, href }) => {
   )
 }
 
-export default SidebarElement
+export default DocNavbarElement
