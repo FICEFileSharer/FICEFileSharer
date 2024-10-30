@@ -2,20 +2,30 @@ import React from 'react'
 import FooterButton from './buttons/FooterButton/FooterButton'
 
 const Footer = () => {
+  const footerLinks = [
+    {
+      href: 'https://github.com/FICEFileSharer/FICEFileSharer',
+      label: 'GitHub',
+      icon: 'bi-github',
+    },
+    { href: '/aboutus', label: 'Про нас' },
+    { href: '/terms', label: 'Умови використання' },
+    { href: '/privacy', label: 'Конфіденційність' },
+    { href: '/security', label: 'Безпека' },
+  ]
+
+  const renderFooterButtons = (links) => {
+    return links.map((link, index) => (
+      <FooterButton key={index} href={link.href}>
+        {link.label} {link.icon && <i className={`bi ${link.icon}`}></i>}
+      </FooterButton>
+    ))
+  }
+
   return (
     <footer className='mt-auto bd-footer'>
       <div className='d-flex flex-wrap justify-content-center bg-dark-202020 p-3 gap-3'>
-        <FooterButton href='https://github.com/FICEFileSharer/FICEFileSharer'>
-          GitHub <i className='bi bi-github'></i>
-        </FooterButton>
-
-        <FooterButton href='/aboutus'>Про нас</FooterButton>
-
-        <FooterButton href='/terms'>Умови використання</FooterButton>
-
-        <FooterButton href='/privacy'>Конфіденційність</FooterButton>
-
-        <FooterButton href='/security'>Безпека</FooterButton>
+        {renderFooterButtons(footerLinks)}
       </div>
     </footer>
   )

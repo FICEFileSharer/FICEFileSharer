@@ -7,6 +7,19 @@ import SearchBar from '../searchInput/SearchBar/SearchBar'
 const Header = () => {
   const location = useLocation()
 
+  const headerLinks = [
+    { href: '/login', condition: '/', label: 'Логін' },
+    { href: '/', condition: '/login', label: 'Профіль' },
+  ]
+
+  const renderHeaderButtons = (links) => {
+    return links.map((link, index) => (
+      <ProfileButton key={index} href={link.href} condition={link.condition}>
+        {link.label}
+      </ProfileButton>
+    ))
+  }
+
   return (
     <header>
       <nav
@@ -49,13 +62,7 @@ const Header = () => {
 
             <SearchBar> </SearchBar>
 
-            <ProfileButton href='/login' condition='/'>
-              Логін
-            </ProfileButton>
-
-            <ProfileButton href='/' condition='/login'>
-              Профіль
-            </ProfileButton>
+            {renderHeaderButtons(headerLinks)}
           </div>
         </div>
       </nav>

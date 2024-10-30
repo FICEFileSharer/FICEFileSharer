@@ -37,6 +37,10 @@ const SearchBar = () => {
     setTimeout(() => setIsActive(false), 100)
   }
 
+  const renderSearchItem = (links) => {
+    return links.map((link, index) => <SearchItem key={index} element={link} />)
+  }
+
   return (
     <form
       className='d-flex align-items-center search-size mobile-pb'
@@ -58,9 +62,7 @@ const SearchBar = () => {
 
         {isActive && suggestions.length > 0 && (
           <ul className='list-group list-size list-search overflow-y-auto'>
-            {suggestions.map((suggestion, index) => (
-              <SearchItem key={index} element={suggestion} />
-            ))}
+            {renderSearchItem(suggestions)}
           </ul>
         )}
       </div>

@@ -6,6 +6,20 @@ import searchData from '../data/searchData.temp'
 const WelcomePage = () => {
   const { searchQuery } = useContext(SearchContext)
 
+  const renderFolderCard = (links) => {
+    return links.map((link, index) => (
+      <FolderCard
+        key={index}
+        card={link}
+        style_class={
+          link.name.toLowerCase().includes(searchQuery.toLowerCase())
+            ? 'd-inline-block'
+            : 'd-none'
+        }
+      />
+    ))
+  }
+
   return (
     <div>
       <div className='d-flex h-100 text-center text-white bg-dark'>
@@ -25,17 +39,7 @@ const WelcomePage = () => {
           </p>
 
           <div className='d-flex flex-wrap folder-cont justify-content-center gap-3 mt-3 mb-5 px-2'>
-            {searchData.map((item, index) => (
-              <FolderCard
-                key={index}
-                card={item}
-                style_class={
-                  item.name.toLowerCase().includes(searchQuery.toLowerCase())
-                    ? 'd-inline-block'
-                    : 'd-none'
-                }
-              />
-            ))}
+            {renderFolderCard(searchData)}
           </div>
         </div>
       </div>

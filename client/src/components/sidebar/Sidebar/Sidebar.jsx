@@ -18,6 +18,21 @@ const Sidebar = () => {
     }
   }
 
+  const sidebarLinks = [
+    { href: '/aboutus', label: 'Про нас' },
+    { href: '/terms', label: 'Умови використання' },
+    { href: '/privacy', label: 'Конфіденційність' },
+    { href: '/security', label: 'Безпека' },
+  ]
+
+  const renderSidebarButtons = (links) => {
+    return links.map((link, index) => (
+      <SidebarElement key={index} href={link.href}>
+        {link.label}
+      </SidebarElement>
+    ))
+  }
+
   return (
     <div
       className={`sidebar ${
@@ -48,13 +63,7 @@ const Sidebar = () => {
 
           <div className='collapse navbar-collapse' id='sidebarMenu'>
             <ul className='navbar-nav me-auto flex-column'>
-              <SidebarElement href='/aboutus'>Про нас</SidebarElement>
-
-              <SidebarElement href='/terms'>Умови використання</SidebarElement>
-
-              <SidebarElement href='/privacy'>Конфіденційність</SidebarElement>
-
-              <SidebarElement href='/security'>Безпека</SidebarElement>
+              {renderSidebarButtons(sidebarLinks)}
             </ul>
           </div>
         </div>
