@@ -1,8 +1,8 @@
 import './Header.css'
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import ProfileButton from '../../buttons/ProfileButton/ProfileButton'
-import SearchBar from '../../searchInput/SearchBar/SearchBar'
+import { ProfileButton } from '../../buttons'
+import { SearchBar } from '../../searchInput'
 
 const Header = () => {
   const location = useLocation()

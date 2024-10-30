@@ -1,5 +1,5 @@
 import React from 'react'
-import DocNavbar from '../docNavbar/DocNavbar/DocNavbar'
+import { DocNavbar } from '../docNavbar'
 
 function RouteDocumentation({ children }) {
   return (

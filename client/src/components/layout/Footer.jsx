@@ -1,5 +1,5 @@
 import React from 'react'
-import FooterButton from '../buttons/FooterButton/FooterButton'
+import { FooterButton } from '../buttons'
 
 const Footer = () => {
   const footerLinks = [

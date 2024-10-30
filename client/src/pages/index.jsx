@@ -1,0 +1,6 @@
+export { default as AboutUsPage } from './AboutUsPage'
+export { default as LoginPage } from './LoginPage'
+export { default as PrivacyPage } from './PrivacyPage'
+export { default as SecurityPage } from './SecurityPage'
+export { default as TermsOfServicePage } from './TermsOfServicePage'
+export { default as WelcomePage } from './WelcomePage'

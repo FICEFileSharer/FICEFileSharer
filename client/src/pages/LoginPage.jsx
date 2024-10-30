@@ -1,6 +1,5 @@
 import React from 'react'
-import LoginCard from '../components/cards/LoginCard/LoginCard'
-
+import { LoginCard } from '../components'
 const LoginPage = () => {
   return (
     <div

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { SearchContext } from '../contexts/SearchContext'
-import FolderCard from '../components/cards/FolderCard/FolderCard'
+import { FolderCard } from '../components'
 import searchData from '../data/searchData.temp'
 
 const WelcomePage = () => {
