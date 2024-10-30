@@ -1,76 +1,71 @@
-import './SearchBar.css';
-import React, { useState, useContext } from 'react';
-import SearchItem from '../SearchItem/SearchItem';
-import { SearchContext } from '../../../contexts/SearchContext';
-import searchData from '../../../data/searchData.temp';
+import './SearchBar.css'
+import React, { useState, useContext } from 'react'
+import SearchItem from '../SearchItem/SearchItem'
+import { SearchContext } from '../../../contexts/SearchContext'
+import searchData from '../../../data/searchData.temp'
 
 const SearchBar = () => {
-    const { setSearchQuery } = useContext(SearchContext);
-    const [inputValue, setInputValue] = useState('');
-    const [suggestions, setSuggestions] = useState([]);
-    const [isActive, setIsActive] = useState(false);
+  const { setSearchQuery } = useContext(SearchContext)
+  const [inputValue, setInputValue] = useState('')
+  const [suggestions, setSuggestions] = useState([])
+  const [isActive, setIsActive] = useState(false)
 
-    const handleSearch = (e) => {
-        const value = e.target.value;
-        setInputValue(value);
-        setSearchQuery(value);
-    
-        if (value) {
-            const filteredSuggestions = searchData.filter(item =>
-                item.name.toLowerCase().includes(value.toLowerCase())
-            );
-            setSuggestions(filteredSuggestions);
-        } else {
-            setSuggestions([]);
-        }
-    };
+  const handleSearch = (e) => {
+    const value = e.target.value
+    setInputValue(value)
+    setSearchQuery(value)
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-    };
+    if (value) {
+      const filteredSuggestions = searchData.filter((item) =>
+        item.name.toLowerCase().includes(value.toLowerCase()),
+      )
+      setSuggestions(filteredSuggestions)
+    } else {
+      setSuggestions([])
+    }
+  }
 
-    const handleFocus = () => {
-        setIsActive(true);
-    };
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+  }
 
-    const handleBlur = () => {
-        setTimeout(() => setIsActive(false), 100);
-    };
+  const handleFocus = () => {
+    setIsActive(true)
+  }
 
-    return (
-        <form 
-            className='d-flex align-items-center search-size mobile-pb' 
-            onSubmit={handleFormSubmit}
-        >
-            <div className='position-relative flex-grow-1'>
-                <i className='bi bi-search position-absolute search-icon'></i>
+  const handleBlur = () => {
+    setTimeout(() => setIsActive(false), 100)
+  }
 
-                <input 
-                    className='form-control me-sm-2 ps-6' 
-                    id='search' 
-                    type='search' 
-                    placeholder='Пошук...' 
-                    value={inputValue} 
-                    onChange={handleSearch} 
-                    onFocus={handleFocus} 
-                    onBlur={handleBlur}
-                />
+  return (
+    <form
+      className='d-flex align-items-center search-size mobile-pb'
+      onSubmit={handleFormSubmit}
+    >
+      <div className='position-relative flex-grow-1'>
+        <i className='bi bi-search position-absolute search-icon'></i>
 
-                {isActive && suggestions.length > 0 && ( 
-                    <ul className='list-group list-size list-search overflow-y-auto'> 
-                        {suggestions.map((suggestion, index) => ( 
+        <input
+          className='form-control me-sm-2 ps-6'
+          id='search'
+          type='search'
+          placeholder='Пошук...'
+          value={inputValue}
+          onChange={handleSearch}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
 
-                            <SearchItem 
-                                key={index} 
-                                element={suggestion} 
-                            /> 
+        {isActive && suggestions.length > 0 && (
+          <ul className='list-group list-size list-search overflow-y-auto'>
+            {suggestions.map((suggestion, index) => (
+              <SearchItem key={index} element={suggestion} />
+            ))}
+          </ul>
+        )}
+      </div>
+    </form>
+  )
+}
 
-                        ))}
-                    </ul> 
-                )}
-            </div>
-        </form>
-    );
-};
-
-export default SearchBar;
+export default SearchBar

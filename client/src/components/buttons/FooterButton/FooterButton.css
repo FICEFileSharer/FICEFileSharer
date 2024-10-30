@@ -1,4 +1,4 @@
 .btn-footer:hover {
-    color: var(--bs-success) !important;
-    text-decoration: underline !important;
+  color: var(--bs-success) !important;
+  text-decoration: underline !important;
 }

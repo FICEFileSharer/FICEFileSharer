@@ -54,7 +54,7 @@
 }
 
 :root,
-[data-bs-theme=light] {
+[data-bs-theme='light'] {
   --bs-navbar: #00bc55;
   --bs-navbar-rgb: 0, 188, 85;
   --bs-dark-101010: #101010;
@@ -71,18 +71,18 @@
 
 @media (min-width: 600px) {
   .folder-cont {
-      flex-direction: row;
+    flex-direction: row;
   }
 }
 
 @media (min-width: 768px) {
   .mobile-pb {
-      padding-bottom: 0rem !important;
+    padding-bottom: 0rem !important;
   }
 
   .px-mb-1 {
-      padding-right: 3rem !important;
-      padding-left: 3rem !important;
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
   }
 }
 

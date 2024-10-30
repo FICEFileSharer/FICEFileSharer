@@ -1,42 +1,24 @@
-import React from 'react';
-import FooterButton from './buttons/FooterButton/FooterButton';
+import React from 'react'
+import FooterButton from './buttons/FooterButton/FooterButton'
 
 const Footer = () => {
   return (
-        <footer className='mt-auto bd-footer'>
-            <div className='d-flex flex-wrap justify-content-center bg-dark-202020 p-3 gap-3'>
-                <FooterButton 
-                    href='https://github.com/FICEFileSharer/FICEFileSharer'
-                >
-                    GitHub <i className='bi bi-github'></i>
-                </FooterButton>
+    <footer className='mt-auto bd-footer'>
+      <div className='d-flex flex-wrap justify-content-center bg-dark-202020 p-3 gap-3'>
+        <FooterButton href='https://github.com/FICEFileSharer/FICEFileSharer'>
+          GitHub <i className='bi bi-github'></i>
+        </FooterButton>
 
-                <FooterButton 
-                    href='/aboutus'
-                >
-                    Про нас
-                </FooterButton>
+        <FooterButton href='/aboutus'>Про нас</FooterButton>
 
-                <FooterButton 
-                    href='/terms'
-                >
-                    Умови використання
-                </FooterButton>
+        <FooterButton href='/terms'>Умови використання</FooterButton>
 
-                <FooterButton 
-                    href='/privacy'
-                >
-                    Конфіденційність
-                </FooterButton>
+        <FooterButton href='/privacy'>Конфіденційність</FooterButton>
 
-                <FooterButton 
-                    href='/security'
-                >
-                    Безпека
-                </FooterButton>
-            </div>
-        </footer>
-    );
-};
+        <FooterButton href='/security'>Безпека</FooterButton>
+      </div>
+    </footer>
+  )
+}
 
-export default Footer;
+export default Footer

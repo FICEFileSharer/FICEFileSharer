@@ -1,24 +1,24 @@
 .sidebar {
-    min-width: 210px;
-    min-height: 20vh;
-    position: static !important;
+  min-width: 210px;
+  min-height: 20vh;
+  position: static !important;
 }
 
 @media (max-width: 768px) {
-    .sidebar {
-        position: fixed !important;
-        min-width: 95px !important;
-        max-width: 95px !important;
-        min-height: 75px !important;
-        max-height: 75px !important;
-        background-color: var(--bs-gray-600);
-        border-radius: 10px;
-        z-index: 1000;
-        left: -80px !important;
-        transition: 0.3s;
-    }
+  .sidebar {
+    position: fixed !important;
+    min-width: 95px !important;
+    max-width: 95px !important;
+    min-height: 75px !important;
+    max-height: 75px !important;
+    background-color: var(--bs-gray-600);
+    border-radius: 10px;
+    z-index: 1000;
+    left: -80px !important;
+    transition: 0.3s;
+  }
 
-    .sidebar:hover {
-        left: 0 !important;
-    }
+  .sidebar:hover {
+    left: 0 !important;
+  }
 }

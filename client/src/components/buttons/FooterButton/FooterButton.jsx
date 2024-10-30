@@ -1,15 +1,12 @@
-import './FooterButton.css';
-import React from 'react';
+import './FooterButton.css'
+import React from 'react'
 
 const FooterButton = ({ children, href }) => {
   return (
-    <a 
-        href={href} 
-        className='text-decoration-none text-white btn-footer'
-    >
-        {children}
+    <a href={href} className='text-decoration-none text-white btn-footer'>
+      {children}
     </a>
-  );
-};
+  )
+}
 
-export default FooterButton;
+export default FooterButton
