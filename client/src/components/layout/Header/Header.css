@@ -1,0 +1,3 @@
+.bg-navbar {
+  background-color: rgba(var(--bs-navbar-rgb), var(--bs-bg-opacity)) !important;
+}

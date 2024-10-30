@@ -1,35 +1,46 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { SearchContext } from '../contexts/SearchContext'
+import { FolderCard } from '../components'
+import searchData from '../data/searchData.temp'
 
 const WelcomePage = () => {
+  const { searchQuery } = useContext(SearchContext)
+
+  const renderFolderCard = (links) => {
+    return links.map((link, index) => (
+      <FolderCard
+        key={index}
+        card={link}
+        style_class={
+          link.name.toLowerCase().includes(searchQuery.toLowerCase())
+            ? 'd-inline-block'
+            : 'd-none'
+        }
+      />
+    ))
+  }
+
   return (
     <div>
       <div className='d-flex h-100 text-center text-white bg-dark'>
-        <div class='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
-          <header class='mb-auto'></header>
-
+        <div className='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
           <h1>FICE File Sharer</h1>
+
           <p>
-            Файловий шерер для студентів КПІ ФІОТ — це веб-додаток, який дозволяє
-            студентам зручно завантажувати, зберігати та обмінюватися файлами в
-            межах навчальних груп.
+            Файловий шерер для студентів КПІ ФІОТ — це веб-додаток, який
+            дозволяє студентам зручно завантажувати, зберігати та обмінюватися
+            файлами в межах навчальних груп.
           </p>
+
           <p>
-            <a href='/login' class='btn btn-lg btn-outline-light '>
+            <a href='/login' className='btn btn-lg btn-outline-light'>
               Розпочати роботу
             </a>
           </p>
 
-          <footer class='mt-auto text-white-50'>
-            <p>
-              Вихідний код застосунку доступний на{' '}
-              <a
-                href='https://github.com/FICEFileSharer/FICEFileSharer'
-                class='text-white'
-              >
-                GitHub <i className='bi bi-github'></i>
-              </a>
-            </p>
-          </footer>
+          <div className='d-flex flex-wrap folder-cont justify-content-center gap-3 mt-3 mb-5 px-2'>
+            {renderFolderCard(searchData)}
+          </div>
         </div>
       </div>
     </div>

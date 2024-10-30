@@ -1,0 +1,22 @@
+.scroll-to-top {
+  color: var(--bs-navbar);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  color: var(--bs-success);
+}
+
+@media (min-width: 768px) {
+  .end-pc {
+    right: 1% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .bottom-mb {
+    bottom: 15% !important;
+  }
+}
