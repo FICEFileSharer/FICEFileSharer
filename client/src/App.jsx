@@ -16,6 +16,23 @@ import SecurityPage from './pages/SecurityPage'
 function App() {
   const location = useLocation()
 
+  const routeDocLinks = [
+    { href: '/aboutus', component: <AboutUsPage /> },
+    { href: '/terms', component: <TermsOfServicePage /> },
+    { href: '/privacy', component: <PrivacyPage /> },
+    { href: '/security', component: <SecurityPage /> },
+  ]
+
+  const renderrouteDocPages = (paths) => {
+    return paths.map((path, index) => (
+      <Route
+        key={index}
+        path={path.href}
+        element={<RouteDocumentation>{path.component}</RouteDocumentation>}
+      ></Route>
+    ))
+  }
+
   return (
     <div className='App d-flex flex-column min-vh-100'>
       <SearchProvider>
@@ -27,41 +44,7 @@ function App() {
 
             <Route path='login' element={<LoginPage />}></Route>
 
-            <Route
-              path='/aboutus'
-              element={
-                <RouteDocumentation>
-                  <AboutUsPage />
-                </RouteDocumentation>
-              }
-            ></Route>
-
-            <Route
-              path='/terms'
-              element={
-                <RouteDocumentation>
-                  <TermsOfServicePage />
-                </RouteDocumentation>
-              }
-            ></Route>
-
-            <Route
-              path='/privacy'
-              element={
-                <RouteDocumentation>
-                  <PrivacyPage />
-                </RouteDocumentation>
-              }
-            ></Route>
-
-            <Route
-              path='/security'
-              element={
-                <RouteDocumentation>
-                  <SecurityPage />
-                </RouteDocumentation>
-              }
-            ></Route>
+            {renderrouteDocPages(routeDocLinks)}
           </Routes>
         </main>
 
